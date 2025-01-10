@@ -38,6 +38,11 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
 
+    # Fields for likes and dislikes and saving posts
+    likes = models.ManyToManyField(User, related_name="liked_posts", blank=True)
+    dislikes = models.ManyToManyField(User, related_name="disliked_posts", blank=True)
+    saved_by = models.ManyToManyField(User, related_name="saved_posts", blank=True)
+
 
     class Meta:
         ordering = ["-created_on"]
@@ -45,6 +50,15 @@ class Post(models.Model):
 
     def __str__(self):
         return f"Post title: {self.title}"
+
+    def total_likes(self):
+        return self.likes.count()
+
+    def total_dislikes(self):
+        return self.dislikes.count()
+
+    def total_saves(self):
+        return self.saved_by.count()
 
 
 class Comment(models.Model):
