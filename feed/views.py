@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Topic
 
 # Create your views here.
-def my_feed(request):
-    return HttpResponse("Hello, Feed!")
+class TopicList(generic.ListView):
+    queryset = Topic.objects.all()
+    template_name = "topic_list.html"
