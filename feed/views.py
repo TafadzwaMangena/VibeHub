@@ -5,4 +5,5 @@ from .models import Topic
 # Create your views here.
 class TopicList(generic.ListView):
     queryset = Topic.objects.all()
-    template_name = "topic_list.html"
+    template_name = "feed/index.html"
+    paginate_by = 10
