@@ -19,6 +19,7 @@
                             </div>
                             <a href="#" class="topic-link">
                                 <h2 class="card-title">{{ topic.title }}</h2>
+                                <p class="card-text">{{ topic.excerpt }}</p>
                             </a>
                             <hr />
                         </div>
@@ -45,4 +46,8 @@
 </div>
 
 <!-- index.html content ends here -->
+{% endblock %}
+
+{% block copyright %}
+    Designed and Developed by Tafadzwa Mangena
 {% endblock %}
