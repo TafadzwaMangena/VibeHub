@@ -9,7 +9,7 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for topic in topic_list %}
+                {% for topic in topics %}
                 <div class="col-md-3">
                     <div class="card mb-3">
                         <div class="card-body">
@@ -33,16 +33,18 @@
 
             </div>
         </div>
+        {% for post in posts %}
         <article class="media content-section">
             <div class="media-body">
-              <div class="article-metadata">
-                <a class="mr-2" href="#">{{ post.author }}</a>
-                <small class="text-muted">{{ post.date_posted }}</small>
-              </div>
-              <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-              <p class="article-content">{{ post.content }}</p>
+                <div class="article-metadata">
+                    <a class="mr-2" href="#">{{ post.author }}</a>
+                    <small class="text-muted">{{ post.date_posted }}</small>
+                </div>
+                <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
             </div>
-          </article>
+        </article>
+        {% endfor %}
     </div>
     {% if is_paginated %}
     <nav aria-label="Page navigation">
@@ -59,5 +61,5 @@
 {% endblock %}
 
 {% block copyright %}
-    Designed and Developed by Tafadzwa Mangena
+Designed and Developed by Tafadzwa Mangena
 {% endblock %}
