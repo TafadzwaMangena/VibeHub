@@ -50,7 +50,7 @@
                     </ul>
                 </div>
                 <div class="navbar-nav">
-                    
+
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
@@ -73,12 +73,10 @@
 
     <main class="flex-shrink-0 main-bg">
 
-        {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-            {{ message }}
-        </div>
-        {% endfor %}
+        {% if user.is_authenticated %}
+        <p class="m-3">You are logged in as {{ user }}</p>
+        {% else %}
+        <p class="m-3">You are not logged in</p>
         {% endif %}
 
         {% block content %}
