@@ -25,10 +25,11 @@ class Post(models.Model):
         on_delete=models.CASCADE,
         related_name="my_feed"
     )
-    author = models.ForeignKey(
+    related_topic = models.ForeignKey(
         Topic,
         on_delete=models.CASCADE,
-        related_name="my_feed"
+        related_name="my_feed",
+        default="1"
     )
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
