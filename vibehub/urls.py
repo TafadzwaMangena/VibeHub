@@ -16,12 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from user_profile import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
-    path('register/', user_views.register, name='register'),
+    #path('register/', user_views.register, name='register'),
     path('summernote/', include('django_summernote.urls')),
-    path("", include("feed.urls"), name="feed-urls"),    
+    path("profile", include("user_profile.urls"), name="profile"),  
+    path("", include("feed.urls"), name="feed-urls"),  
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
