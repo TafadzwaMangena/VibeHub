@@ -53,7 +53,9 @@
                     <!-- Only display CRUD functionality for the owner of the post -->
                     {% if user.is_authenticated and post.author == user %}
                     <a href="{% url 'post_update' post.pk %}" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                    <!-- Trigger modal -->
+                    <button class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#deleteModal{{ post.pk }}">Delete</button>
                     {% endif %}
 
                     <!-- Display report button for all authenticated users -->
@@ -64,6 +66,26 @@
                         title="Log in to report posts">Report</a>
                     {% endif %}
                 </li>
+
+                <!-- Delete Confirmation Modal -->
+        <div class="modal fade" id="deleteModal{{ post.pk }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ post.pk }}" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel{{ post.pk }}">Confirm Deletion</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete the post titled "<strong>{{ post.title }}</strong>"? This action cannot be undone.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
                 {% endfor %}
             </ul>
         </div>
