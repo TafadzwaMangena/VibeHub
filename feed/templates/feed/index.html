@@ -51,7 +51,7 @@
                     <p class="text-muted"><strong>Reports:</strong> {{ post.reports.count }}</p>
 
                     <!-- Only display CRUD functionality for the owner of the post -->
-                    {% if user.is_authenticated and post.user == user %}
+                    {% if user.is_authenticated and post.author == user %}
                     <a href="{% url 'post_update' post.pk %}" class="btn btn-warning btn-sm">Edit</a>
                     <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger btn-sm">Delete</a>
                     {% endif %}
