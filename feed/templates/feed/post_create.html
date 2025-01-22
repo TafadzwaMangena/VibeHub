@@ -3,20 +3,13 @@
 {% block content %}
 
 <div class="container mt-5">
-    <h1>Create Post</h1>
+    <h1>Create a New Post</h1>
     <form method="post">
         {% csrf_token %}
-        <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" name="title" id="title" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label for="content" class="form-label">Content</label>
-            <textarea name="content" id="content" class="form-control" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <a href="{% url 'feed' %}" class="btn btn-secondary">Cancel</a>
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
     </form>
+    <a href="{% url 'feed' %}">Back to Feed</a>
 </div>
 
 {% endblock %}

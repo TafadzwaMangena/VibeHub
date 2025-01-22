@@ -5,22 +5,12 @@ from django.views import generic
 import datetime
 from django.utils import timezone
 from .models import Topic, Post, Report
+from .forms import PostForm
 
-# Create your views here.
-# class TopicList(generic.ListView):
-#     queryset = Topic.objects.all()
-#     template_name = "feed/index.html"
-#     paginate_by = 10
-
-#     def my_feed(request):
-#     context = {
-#         'posts': Post.objects.all
-#     }
-#     return render(request, 'feed/index.html', context)
 
 def my_feed(request):
     topics = Topic.objects.all()
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-created_on') # Fetch all posts, ordered by most recent
 
     context = {
         'topics': topics,
@@ -30,24 +20,20 @@ def my_feed(request):
     return render(request, 'feed/index.html', context)
 
 
-def post_create(request):
-    if request.method == 'POST':
-        title = request.POST['title']
-        content = request.POST['content']
-        Post.objects.create(title=title, content=content)
-        return redirect('feed')
-    return render(request, 'feed/post_create.html')
-
-
 # Create a post
 @login_required
 def post_create(request):
-    if request.method == 'POST':
-        title = request.POST['title']
-        content = request.POST['content']
-        Post.objects.create(title=title, content=content)
-        return redirect('feed')
-    return render(request, 'feed/post_create.html')
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user  # Assign the logged-in user as the author
+            post.save()
+            return redirect("feed")
+    else:
+        form = PostForm()
+    return render(request, "feed/post_create.html", {"form": form})
+
 
 # Update a post
 @login_required
