@@ -61,10 +61,14 @@ def post_delete(request, pk):
 def report_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST':
-        reason = request.POST['reason']
+        reason = request.POST.get('reason')
         details = request.POST.get('details', '')
+
+        # Save the report
         Report.objects.create(
             post=post, reporter=request.user, reason=reason, details=details
         )
-        return JsonResponse({'success': True, 'total_reports': post.reports.count()})
+
+        # Redirect to the feed after report made
+        return redirect('feed')
     return render(request, 'feed/report_post.html', {'post': post})

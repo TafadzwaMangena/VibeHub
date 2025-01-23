@@ -5,7 +5,7 @@
 <div>
     <h1>Report Post</h1>
     <p>Are you sure you want to report the post titled "<strong>{{ post.title }}</strong>"?</p>
-    <form method="post" action="{% url 'feed' %}">
+    <form method="post" action="{% url 'report_post' post.id %}">
         {% csrf_token %}
         <div>
             <label for="reason">Reason</label>
