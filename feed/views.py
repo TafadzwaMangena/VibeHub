@@ -39,12 +39,15 @@ def post_create(request):
 @login_required
 def post_update(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    topics = Topic.objects.all()  
     if request.method == 'POST':
-        post.title = request.POST['title']
-        post.content = request.POST['content']
-        post.save()
-        return redirect('feed')
-    return render(request, 'feed/post_update.html', {'post': post})
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('feed')
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'feed/post_update.html', {'form': form, 'post': post, 'topics': topics})
 
 # Delete a post
 @login_required
