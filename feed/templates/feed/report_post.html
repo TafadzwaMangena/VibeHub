@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <h1>Report Post</h1>
+    <p>Are you sure you want to report the post titled "<strong>{{ post.title }}</strong>"?</p>
+    <form method="post" action="{% url 'feed' %}">
+        {% csrf_token %}
+        <div>
+            <label for="reason">Reason</label>
+            <select name="reason" id="reason" required>
+                <option value="SPAM">Spam</option>
+                <option value="INAP">Inappropriate Content</option>
+                <option value="HATE">Hate Speech</option>
+                <option value="OTHER">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="details">Additional Details (Optional)</label>
+            <textarea name="details" id="details" rows="4"></textarea>
+        </div>
+        <button type="submit">Report</button>
+        <a href="{% url 'feed' %}">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}
