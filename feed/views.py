@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views import generic
 import datetime
@@ -29,6 +30,7 @@ def post_create(request):
             post = form.save(commit=False)
             post.author = request.user  # Assign the logged-in user as the author
             post.save()
+            messages.success(request, 'Your post has been created successfully!')
             return redirect("feed")
     else:
         form = PostForm()
@@ -44,6 +46,7 @@ def post_update(request, pk):
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Your post has been updated successfully!')
             return redirect('feed')
     else:
         form = PostForm(instance=post)
@@ -54,6 +57,7 @@ def post_update(request, pk):
 def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
+    messages.success(request, 'The post has been deleted successfully.')
     return redirect('feed')
 
 # Report a post
@@ -68,6 +72,8 @@ def report_post(request, pk):
         Report.objects.create(
             post=post, reporter=request.user, reason=reason, details=details
         )
+
+        messages.success(request, f'Thank you for reporting the post: "{post.title}".')
 
         # Redirect to the feed after report made
         return redirect('feed')
