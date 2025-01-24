@@ -1,12 +1,21 @@
 
-/*------------------------nav-----------------------------------*/
+/*------------------------header-----------------------------------*/
 a {
     text-decoration: none;
     color: black;
 }
 
 .navbar {
-    background-color: gray;
+    color: #ffffff;
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+header {
+    background-color: #000000;
+    color: #ffffff;
 }
 
 /*--------------------------main--------------------------------*/
@@ -14,5 +23,45 @@ a {
 
 /*-------------------------footer-------------------------------*/
 footer {
-    background-color: gray;
+    background-color: #000000;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-left,
+.footer-right {
+    width: 45%;
+    color: #ffffff;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .footer-left p {
+    color: #ffffff;
 }
