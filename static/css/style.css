@@ -16,9 +16,19 @@ a {
 header {
     background-color: #000000;
     color: #ffffff;
+    display: flex;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    align-items: start;
 }
 
 /*--------------------------main--------------------------------*/
+
+main {
+    /* Add margin top so no content will be covered in header */
+    margin-top: 62px;
+}
 
 
 /*-------------------------footer-------------------------------*/
