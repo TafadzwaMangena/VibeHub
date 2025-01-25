@@ -47,7 +47,13 @@
                     <p class="text-muted mb-1"><strong>Author:</strong> {{ post.author }}</p>
                     <h5>{{ post.title }}</h5>
                     <p>{{ post.content }}</p>
-                    <p class="text-muted"><strong>Posted on:</strong> {{ post.updated_on|date:"F j, Y, g:i a" }}</p>
+                    <p>
+                        {% if post.is_updated %}
+                            Updated on {{ post.updated_on|date:"F j, Y, g:i a" }}
+                        {% else %}
+                            Posted on {{ post.created_on|date:"F j, Y, g:i a" }}
+                        {% endif %}
+                    </p>
                     <p class="text-muted"><strong>Reports:</strong> {{ post.reports.count }}</p>
 
                     <!-- Only display CRUD functionality for the owner of the post -->

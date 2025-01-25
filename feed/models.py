@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import timedelta
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -37,6 +38,10 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+
+    #To check if post has been updated by checking time difference between created_on and updated_on
+    def is_updated(self):
+        return self.updated_on - self.created_on > timedelta(seconds=1)
 
     # Fields for likes and dislikes and saving posts
     likes = models.ManyToManyField(User, related_name="liked_posts", blank=True)
