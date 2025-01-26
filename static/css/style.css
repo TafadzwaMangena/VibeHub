@@ -1,4 +1,11 @@
 
+body {
+    display: flex;
+    margin: 0;
+    background-color: #f8f9fa;
+  }
+
+
 /*------------------------header-----------------------------------*/
 a {
     text-decoration: none;
@@ -32,12 +39,36 @@ main {
     padding: 20px;
 }
 
+.signup-container, .signin-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  .btn-signup, .btn-signin {
+    background-color: #007bff;
+    color: white;
+  }
+  .btn-signup:hover, .btn-signin:hover {
+    background-color: #0056b3;
+  }
+  .form-control {
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
 
 /*-------------------------footer-------------------------------*/
 footer {
     background-color: #000000;
     padding: 1rem;
     font-size: 0.9rem;
+    width: 100%;
 }
 
 .footer-container {

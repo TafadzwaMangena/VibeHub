@@ -7,27 +7,30 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container signin-container">
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign In" %}</h3>
-
-            <p>{% blocktrans %}Welcome back to VibeHube. To leave a post, comment, report a post or like a post, please
-                log in.
-                first.{% endblocktrans %}</p>
-        </div>
+      <div class="col-md-12 text-center">
+        <h3 class="mb-4">{% trans "Sign In" %}</h3>
+        <p class="mb-4">
+          {% blocktrans %}
+            Welcome back to VibeHub! To leave a post, comment, report a post, or like a post, please log in first.
+          {% endblocktrans %}
+        </p>
+      </div>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                {{ form.as_p }}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
-            </form>
-        </div>
+      <div class="col-md-12">
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
+          {{ form.as_p }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <div class="text-center">
+            <button class="btn btn-signin mt-3" type="submit">{% trans "Sign In" %}</button>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
+  </div>
 {% endblock %}
