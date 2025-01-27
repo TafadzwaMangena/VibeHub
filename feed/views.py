@@ -84,3 +84,8 @@ def topic_posts(request, topic_id):
     topic = get_object_or_404(Topic, id=topic_id)
     posts = Post.objects.filter(related_topic=topic)
     return render(request, 'feed/topic_posts.html', {'topic': topic, 'posts': posts})
+
+
+def post_detail(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    return render(request, 'feed/post_detail.html', {'post': post})
