@@ -2,27 +2,29 @@
 
 {% block content %}
 
-<div>
-    <h1>Report Post</h1>
-    <p>Are you sure you want to report the post titled "<strong>{{ post.title }}</strong>"?</p>
+<div class="container report-post-container">
+    <h1 class="text-center mb-4">Report Post</h1>
+    <p class="text-center">Are you sure you want to report the post titled "<strong>{{ post.title }}</strong>"?</p>
     <form method="post" action="{% url 'report_post' post.id %}">
-        {% csrf_token %}
-        <div>
-            <label for="reason">Reason</label>
-            <select name="reason" id="reason" required>
-                <option value="SPAM">Spam</option>
-                <option value="INAP">Inappropriate Content</option>
-                <option value="HATE">Hate Speech</option>
-                <option value="OTHER">Other</option>
-            </select>
-        </div>
-        <div>
-            <label for="details">Additional Details (Optional)</label>
-            <textarea name="details" id="details" rows="4"></textarea>
-        </div>
-        <button type="submit">Report</button>
-        <a href="{% url 'feed' %}">Cancel</a>
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="reason" class="form-label">Reason</label>
+        <select name="reason" id="reason" class="form-select" required>
+          <option value="SPAM">Spam</option>
+          <option value="INAP">Inappropriate Content</option>
+          <option value="HATE">Hate Speech</option>
+          <option value="OTHER">Other</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="details" class="form-label">Additional Details (Optional)</label>
+        <textarea name="details" id="details" class="form-control" rows="4"></textarea>
+      </div>
+      <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-report px-4">Report</button>
+        <a href="{% url 'feed' %}" class="btn btn-cancel px-4">Cancel</a>
+      </div>
     </form>
-</div>
+  </div>
 
 {% endblock %}
