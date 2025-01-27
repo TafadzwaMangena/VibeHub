@@ -63,6 +63,30 @@ main {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
 
+  .create-post-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .btn-submit {
+    background-color: #28a745;
+    color: white;
+  }
+  .btn-submit:hover {
+    background-color: #218838;
+  }
+  .btn-back {
+    background-color: #6c757d;
+    color: white;
+  }
+  .btn-back:hover {
+    background-color: #5a6268;
+  }
+
 /*-------------------------footer-------------------------------*/
 footer {
     background-color: #000000;
