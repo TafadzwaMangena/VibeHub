@@ -5,7 +5,7 @@
     <h1>{{ post.title }}</h1>
     <p><strong>Topic:</strong> {{ post.related_topic.title }}</p>
     <p>{{ post.content }}</p>
-    <p><em>Posted on: {{ post.created_on }}</em></p>
+    <p><em>Posted on: {{ post.created_on }} by {{ post.author }}</em></p>
     <a href="{% url 'feed' %}" class="btn btn-primary">Back to Feed</a>
 </div>
 {% endblock %}
