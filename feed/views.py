@@ -78,3 +78,9 @@ def report_post(request, pk):
         # Redirect to the feed after report made
         return redirect('feed')
     return render(request, 'feed/report_post.html', {'post': post})
+
+
+def topic_posts(request, topic_id):
+    topic = get_object_or_404(Topic, id=topic_id)
+    posts = Post.objects.filter(related_topic=topic)
+    return render(request, 'feed/topic_posts.html', {'topic': topic, 'posts': posts})
