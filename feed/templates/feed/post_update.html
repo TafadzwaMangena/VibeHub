@@ -2,31 +2,33 @@
 
 {% block content %}
 
-<div>
-    <h2>Update Post</h2>
+<div class="container update-post-container">
+    <h2 class="text-center mb-4">Update Post</h2>
     <form method="post">
-        {% csrf_token %}
-        <div>
-            <label for="title">Title</label>
-            <input type="text" name="title" id="title" value="{{ post.title }}" required>
-        </div>
-        <div>
-            <label for="related_topic">Topic</label>
-            <select name="related_topic" id="related_topic">
-                {% for topic in topics %}
-                <option value="{{ topic.id }}" {% if post.related_topic.id == topic.id %}selected{% endif %}>
-                    {{ topic.title }}
-                </option>
-                {% endfor %}
-            </select>
-        </div>
-        <div>
-            <label for="content">Content</label>
-            <textarea name="content" id="content" rows="5" required>{{ post.content }}</textarea>
-        </div>
-        <button type="submit">Update Post</button>
-        <a href="{% url 'feed' %}">Cancel</a>
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="title" id="title" class="form-control" value="{{ post.title }}" required>
+      </div>
+      <div class="mb-3">
+        <label for="related_topic" class="form-label">Topic</label>
+        <select name="related_topic" id="related_topic" class="form-select">
+          {% for topic in topics %}
+          <option value="{{ topic.id }}" {% if post.related_topic.id == topic.id %}selected{% endif %}>
+            {{ topic.title }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea name="content" id="content" class="form-control" rows="5" required>{{ post.content }}</textarea>
+      </div>
+      <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-update px-4">Update Post</button>
+        <a href="{% url 'feed' %}" class="btn btn-cancel px-4">Cancel</a>
+      </div>
     </form>
-</div>
+  </div>
 
 {% endblock %}
