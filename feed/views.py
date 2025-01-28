@@ -89,3 +89,10 @@ def topic_posts(request, topic_id):
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     return render(request, 'feed/post_detail.html', {'post': post})
+
+
+def msg_view(request):
+    if request.user.is_authenticated:
+        messages.success(request, f"You are logged in as {request.user.username}.")
+    else:
+        messages.warning(request, "You are not logged in.")
