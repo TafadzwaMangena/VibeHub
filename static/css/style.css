@@ -126,6 +126,22 @@ main {
     background-color: #b02a37;
   }
 
+/* ------------------------django messages---------------------*/
+
+.msg-info {
+  background-size: 20px 20px;
+  border: 1px solid #ced4da;
+}
+
+/* Transition for fading effect */
+#django-message {
+  display: none;
+  z-index: 1050;
+  transition: opacity 1s ease-in-out;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 /*-------------------------footer-------------------------------*/
 footer {
     background-color: #000000;

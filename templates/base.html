@@ -81,23 +81,20 @@
         <p class="m-3">You are logged in as {{ user }}</p>
         {% else %}
         <p class="m-3">You are not logged in</p>
-        {% endif %}
+        {% endif %}-->
 
-        {% if messages %}
-        <div>
-            {% for message in messages %}
-            <div class="alert {{ message.tags }}">
-                {{ message }}
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %}
--->
+{% if messages %}
+<div id="django-message" class="position-absolute top-0 start-50 translate-middle-x p-3 rounded text-center">
+    {% for message in messages %}
+    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} msg-info">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 
         {% block content %}
-
-
-
         {% endblock content %}
 
     </main>
