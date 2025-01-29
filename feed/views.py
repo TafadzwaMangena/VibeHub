@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views import generic
+from django.core.paginator import Paginator
 import datetime
 from django.utils import timezone
 from .models import Topic, Post, Report
@@ -11,7 +12,11 @@ from .forms import PostForm
 
 def my_feed(request):
     topics = Topic.objects.all()
-    posts = Post.objects.all().order_by('-created_on')
+    posts_queryset = Post.objects.all().order_by('-created_on')
+
+    paginator = Paginator(posts_queryset, 5)
+    page_number = request.GET.get('page')
+    posts = paginator.get_page(page_number)
 
     context = {
         'topics': topics,

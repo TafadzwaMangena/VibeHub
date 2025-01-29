@@ -87,7 +87,7 @@
         </nav>
     </header>
 
-    <main class="flex-shrink-0 main-bg">
+    <main class="flex-shrink-0 main-bg" >
         {% if messages %}
         <div id="django-message" class="position-absolute top-0 start-50 translate-middle-x p-3 rounded text-center">
             {% for message in messages %}
@@ -97,6 +97,7 @@
             {% endfor %}
         </div>
         {% endif %}
+        
         {% block content %}
         {% endblock content %}
     </main>
