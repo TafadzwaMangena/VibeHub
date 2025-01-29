@@ -11,7 +11,7 @@ from .forms import PostForm
 
 def my_feed(request):
     topics = Topic.objects.all()
-    posts = Post.objects.all().order_by('-created_on') # Fetch all posts, ordered by most recent
+    posts = Post.objects.all().order_by('-created_on')
 
     context = {
         'topics': topics,
@@ -28,9 +28,11 @@ def post_create(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user  # Assign the logged-in user as the author
+            post.author = request.user
             post.save()
-            messages.success(request, 'Your post has been created successfully!')
+            messages.success(
+                request, 'Your post has been created successfully!'
+                )
             return redirect("feed")
     else:
         form = PostForm()
@@ -41,16 +43,23 @@ def post_create(request):
 @login_required
 def post_update(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    topics = Topic.objects.all()  
+    topics = Topic.objects.all()
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your post has been updated successfully!')
+            messages.success(
+                request, 'Your post has been updated successfully!'
+                )
             return redirect('feed')
     else:
         form = PostForm(instance=post)
-    return render(request, 'feed/post_update.html', {'form': form, 'post': post, 'topics': topics})
+    return render(
+        request,
+        'feed/post_update.html',
+        {'form': form, 'post': post, 'topics': topics}
+        )
+
 
 # Delete a post
 @login_required
@@ -59,6 +68,7 @@ def post_delete(request, pk):
     post.delete()
     messages.success(request, 'The post has been deleted successfully.')
     return redirect('feed')
+
 
 # Report a post
 @login_required
@@ -73,7 +83,9 @@ def report_post(request, pk):
             post=post, reporter=request.user, reason=reason, details=details
         )
 
-        messages.success(request, f'Thank you for reporting the post: "{post.title}".')
+        messages.success(
+            request, f'Thank you for reporting the post: "{post.title}".'
+            )
 
         # Redirect to the feed after report made
         return redirect('feed')
@@ -83,7 +95,11 @@ def report_post(request, pk):
 def topic_posts(request, topic_id):
     topic = get_object_or_404(Topic, id=topic_id)
     posts = Post.objects.filter(related_topic=topic)
-    return render(request, 'feed/topic_posts.html', {'topic': topic, 'posts': posts})
+    return render(
+        request,
+        'feed/topic_posts.html',
+        {'topic': topic, 'posts': posts}
+        )
 
 
 def post_detail(request, post_id):
@@ -93,6 +109,9 @@ def post_detail(request, post_id):
 
 def msg_view(request):
     if request.user.is_authenticated:
-        messages.success(request, f"You are logged in as {request.user.username}.")
+        messages.success(
+            request,
+            f"You are logged in as {request.user.username}."
+            )
     else:
         messages.warning(request, "You are not logged in.")
