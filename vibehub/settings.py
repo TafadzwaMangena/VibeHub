@@ -11,8 +11,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-tafadzwamangena-vibehub-x578m0a2g2b.ws.codeinstitute-ide.net',
-                '.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-tafadzwamangena-vibehub-x578m0a2g2b.ws.codeinstitute-ide.net',
+    '.herokuapp.com'
+    ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
