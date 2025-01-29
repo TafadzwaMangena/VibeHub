@@ -9,19 +9,35 @@
   <div class="row">
     <div class="col-md-12 text-center">
       <h3 class="mb-4">{% trans "Sign Up" %}</h3>
-      <p class="mb-4">{% blocktrans %}
+      <p class="mb-4">
+        {% blocktrans %}
         Welcome to VibeHub! Create an account to have the full vibe experience.
-      {% endblocktrans %}</p>
+        {% endblocktrans %}
+      </p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
+        {% for field in form %}
+        <div class="form-group mb-4">
+            {{ field.label_tag }}
+            {{ field }}
+
+            {% if field.help_text %}
+                {% if "<ul>" in field.help_text %}
+                    {{ field.help_text|safe }}
+                {% else %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+            {% endif %}
+
+            {% for error in field.errors %}
+                <div class="text-danger mt-1">{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endfor %}
         <div class="text-center">
           <button class="btn btn-signup mt-3" type="submit">{% trans "Sign Up" %}</button>
         </div>

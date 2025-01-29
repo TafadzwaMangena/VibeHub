@@ -128,6 +128,10 @@ main {
     background-color: #b02a37;
   }
 
+  select:invalid{
+        color: gray;
+    }
+
 /* ------------------------django messages---------------------*/
 
 .msg-info {
