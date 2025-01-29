@@ -17,7 +17,7 @@
                                 <h2 class="card-title">{{ topic.title }}</h2>
                                 <p class="card-text">{{ topic.excerpt }}</p>
                             </a>
-                            <hr />
+                            <hr>
                         </div>
                     </div>
                 </div>
@@ -44,9 +44,9 @@
                     <p>{{ post.content }}</p>
                     <p>
                         {% if post.is_updated %}
-                            Updated on {{ post.updated_on|date:"F j, Y, g:i a" }}
+                        Updated on {{ post.updated_on|date:"F j, Y, g:i a" }}
                         {% else %}
-                            Posted on {{ post.created_on|date:"F j, Y, g:i a" }}
+                        Posted on {{ post.created_on|date:"F j, Y, g:i a" }}
                         {% endif %}
                     </p>
                     <p class="text-muted"><strong>Reports:</strong> {{ post.reports.count }}</p>
@@ -67,28 +67,31 @@
                         title="Log in to report posts">Report</a>
                     {% endif %}
                 </li>
+                {% endfor %}
+            </ul>
 
-                <!-- Delete Confirmation Modal -->
-        <div class="modal fade" id="deleteModal{{ post.pk }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ post.pk }}" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModalLabel{{ post.pk }}">Confirm Deletion</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to delete the post titled "<strong>{{ post.title }}</strong>"? This action cannot be undone.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Delete</a>
+            <!-- Delete Confirmation Modal -->
+            {% for post in posts %}
+            <div class="modal fade" id="deleteModal{{ post.pk }}" tabindex="-1"
+                aria-labelledby="deleteModalLabel{{ post.pk }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel{{ post.pk }}">Confirm Deletion</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete the post titled "<strong>{{ post.title }}</strong>"? This
+                            action cannot be undone.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Delete</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-                {% endfor %}
-            </ul>
+            {% endfor %}
         </div>
 
     </div>
