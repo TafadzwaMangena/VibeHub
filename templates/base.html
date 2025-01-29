@@ -43,7 +43,7 @@
 
 </head>
 
-<body class="d-flex flex-column h-100 main-bg">
+<body class="d-flex flex-column main-bg">
 
     <!-- Navigation -->
     <header>
@@ -88,14 +88,6 @@
     </header>
 
     <main class="flex-shrink-0 main-bg">
-
-        <!--
-        {% if user.is_authenticated %}
-        <p class="m-3">You are logged in as {{ user }}</p>
-        {% else %}
-        <p class="m-3">You are not logged in</p>
-        {% endif %}-->
-
         {% if messages %}
         <div id="django-message" class="position-absolute top-0 start-50 translate-middle-x p-3 rounded text-center">
             {% for message in messages %}
@@ -105,11 +97,8 @@
             {% endfor %}
         </div>
         {% endif %}
-
-
         {% block content %}
         {% endblock content %}
-
     </main>
 
     <!-- Footer -->
@@ -121,8 +110,7 @@
                 <nav>
                     <ul>
                         <li><a href="{% url 'feed' %}">Feed</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
                     </ul>
                 </nav>
             </div>
@@ -142,5 +130,4 @@
     </script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
-
 </html>
