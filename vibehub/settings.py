@@ -12,7 +12,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-tafadzwamangena-vibehub-x578m0a2g2b.ws.codeinstitute-ide.net',
+    '127.0.0.1',
     '.herokuapp.com'
     ]
 
@@ -74,7 +74,7 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeinstitute-ide.net/",
+    "https://localhost",
     "https://*.herokuapp.com"
 ]
 
