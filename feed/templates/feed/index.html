@@ -97,19 +97,31 @@
     </div>
 
     <!-- Pagination -->
-    <div class="pagination">
-        {% if posts.has_previous %}
-            <a href="?page=1">First</a>
-            <a href="?page={{ posts.previous_page_number }}">Previous</a>
-        {% endif %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center mt-4">
+            {% if posts.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1">First</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a>
+                </li>
+            {% endif %}
     
-        <span>Page {{ posts.number }} of {{ posts.paginator.num_pages }}</span>
+            <li class="page-item disabled">
+                <span class="page-link">Page {{ posts.number }} of {{ posts.paginator.num_pages }}</span>
+            </li>
     
-        {% if posts.has_next %}
-            <a href="?page={{ posts.next_page_number }}">Next</a>
-            <a href="?page={{ posts.paginator.num_pages }}">Last &raquo;</a>
-        {% endif %}
-    </div>
+            {% if posts.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ posts.next_page_number }}">Next</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ posts.paginator.num_pages }}">Last</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
 
 </div>
 {% endblock %}
