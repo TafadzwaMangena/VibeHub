@@ -13,7 +13,7 @@
                 <div class="col-md-3">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <a href="{% url 'topic_posts' topic.id %}" class="topic-link">
+                            <a href="{% url 'topic_posts' topic.id %}" class="topic-link" aria-label="Read more about {{ topic.title }}.">
                                 <h2 class="card-title">{{ topic.title }}</h2>
                                 <p class="card-text">{{ topic.excerpt }}</p>
                             </a>
@@ -32,11 +32,11 @@
             <!-- Display create button for authenticated users -->
             {% if user.is_authenticated %}
             <div class="d-flex justify-content mb-3">
-                <a href="{% url 'post_create' %}" class="btn btn-primary">Create Post</a>
+                <a href="{% url 'post_create' %}" class="btn btn-primary" aria-label="Create a new post.">Create Post</a>
             </div>
             {% endif %}
 
-            <ul class="list-group">
+            <ul class="list-group" aria-label="List of posts">
                 {% for post in posts %}
                 <li class="list-group-item">
                     <p class="text-muted mb-1"><strong>Author:</strong> {{ post.author }}</p>
@@ -53,18 +53,18 @@
 
                     <!-- Only display CRUD functionality for the owner of the post -->
                     {% if user.is_authenticated and post.author == user %}
-                    <a href="{% url 'post_update' post.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'post_update' post.pk %}" class="btn btn-warning btn-sm" aria-label="Edit post {{ post.title }}.">Edit</a>
                     <!-- Trigger modal -->
                     <button class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                        data-bs-target="#deleteModal{{ post.pk }}">Delete</button>
+                        data-bs-target="#deleteModal{{ post.pk }}" aria-label="Delete post {{ post.title }}.">Delete</button>
                     {% endif %}
 
                     <!-- Display report button for all authenticated users -->
                     {% if user.is_authenticated %}
-                    <a href="{% url 'report_post' post.pk %}" class="btn btn-secondary btn-sm">Report</a>
+                    <a href="{% url 'report_post' post.pk %}" class="btn btn-secondary btn-sm" aria-label="Report post {{ post.title }}.">Report</a>
                     {% else %}
                     <a href="{% url 'report_post' post.pk %}" class="btn btn-secondary btn-sm disabled"
-                        title="Log in to report posts">Report</a>
+                        title="Log in to report posts" aria-label="Disabled report button for post {{ post.title }}.">Report</a>
                     {% endif %}
                 </li>
                 {% endfor %}
@@ -86,7 +86,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Delete</a>
+                            <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger" aria-label="Confirm delete post {{ post.title }}.">Delete</a>
                         </div>
                     </div>
                 </div>
@@ -101,10 +101,10 @@
         <ul class="pagination justify-content-center mt-4">
             {% if posts.has_previous %}
                 <li class="page-item">
-                    <a class="page-link" href="?page=1">First</a>
+                    <a class="page-link" href="?page=1" aria-label="Go to first page.">First</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a>
+                    <a class="page-link" href="?page={{ posts.previous_page_number }}" aria-label="Go to previous page.">Previous</a>
                 </li>
             {% endif %}
     
@@ -114,14 +114,15 @@
     
             {% if posts.has_next %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ posts.next_page_number }}">Next</a>
+                    <a class="page-link" href="?page={{ posts.next_page_number }}" aria-label="Go to next page.">Next</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ posts.paginator.num_pages }}">Last</a>
+                    <a class="page-link" href="?page={{ posts.paginator.num_pages }}" aria-label="Go to last page.">Last</a>
                 </li>
             {% endif %}
         </ul>
     </nav>
 
 </div>
+
 {% endblock %}

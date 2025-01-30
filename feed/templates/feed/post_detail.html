@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <div class="container mt-5">
     <h1>{{ post.title }}</h1>
     <p><strong>Topic:</strong> {{ post.related_topic.title }}</p>
     <p>{{ post.content }}</p>
     <p><em>Posted on: {{ post.created_on }} by {{ post.author }}</em></p>
-    <a href="{% url 'feed' %}" class="btn btn-primary">Back to Feed</a>
+    <a href="{% url 'feed' %}" class="btn btn-primary" aria-label="Return back to Feed." >Back to Feed</a>
 </div>
+
 {% endblock %}
