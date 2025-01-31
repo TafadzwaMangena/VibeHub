@@ -102,3 +102,10 @@ VibeHub caters to a broad audience, from social media users to content creators,
     + [gitpod](https://www.gitpod.io/)  and [VSCode](https://code.visualstudio.com/) were used as the main tools to write and edit code.
 
 
+---
+
+## FEATURES
+
+Please refer to the [FEATURES.md](FEATURES.md) file for all features-related documentation.
+
+
