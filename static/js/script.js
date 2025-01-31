@@ -12,3 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 10000);
     }
 });
+
+// Add tooltip functionality to elements with the "tooltip" data attribute
+document.addEventListener("DOMContentLoaded", function () {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});
