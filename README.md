@@ -100,6 +100,7 @@ VibeHub caters to a broad audience, from social media users to content creators,
     + [CI Python Linter](https://pep8ci.herokuapp.com/): was used to validate Python code for the website.
     + [GIMP](https://www.gimp.org/) was used to make and resize images for the README file.
     + [gitpod](https://www.gitpod.io/)  and [VSCode](https://code.visualstudio.com/) were used as the main tools to write and edit code.
+    + [Balsamiq wireframes](https://balsamiq.com/) was used to generate the wireframes.
 
 
 ---
@@ -107,5 +108,29 @@ VibeHub caters to a broad audience, from social media users to content creators,
 ## FEATURES
 
 Please refer to the [FEATURES.md](FEATURES.md) file for all features-related documentation.
+
+---
+
+## Design
+
+VibeHub follows a clean, modern, and user-friendly design, balancing aesthetics with usability. The design choices align well with the social media nature of the platform, ensuring users can navigate, interact, and engage effortlessly. 
+
+### Color Scheme
+
+The color scheme of the application is based on simple black and white color schemes with buttons using default bootstrap color schemes:
+
+  ![Color Scheme](coolersphoto)
+
+### Imagery
+
+- The 404 error image was downloaded from [pexels.com](https://www.pexels.com/).
+
+- The favicon was generated and downloaded from [favicon.ico](https://favicon.io/).
+
+### Wireframes
+
+- [Large Screen Wireframes](add-pdf)
+- [Small Screen Wireframes](add-pdf)
+
 
 
