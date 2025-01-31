@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="container mt-5">
-            <!-- Display create button for authenticated users -->
+            <!-- Display create post button for authenticated users -->
             {% if user.is_authenticated %}
             <div class="d-flex justify-content mb-3">
                 <a href="{% url 'post_create' %}" class="btn btn-primary" aria-label="Create a new post.">Create
@@ -57,7 +57,7 @@
                     {% if user.is_authenticated and post.author == user %}
                     <a href="{% url 'post_update' post.pk %}" class="btn btn-warning btn-sm"
                         aria-label="Edit post {{ post.title }}.">Edit</a>
-                    <!-- Trigger modal -->
+                    <!-- Delete trigger modal -->
                     <button class="btn btn-danger btn-sm" data-bs-toggle="modal"
                         data-bs-target="#deleteModal{{ post.pk }}"
                         aria-label="Delete post {{ post.title }}.">Delete</button>

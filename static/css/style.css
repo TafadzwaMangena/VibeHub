@@ -37,7 +37,7 @@ header {
 main {
     /* Add margin top so no content will be covered in header */
     margin-top: 62px;
-    flex: 1; /* Pushes the footer to the bottom */
+    flex: 1;
     padding: 20px;
     padding-top: 50;
 }
