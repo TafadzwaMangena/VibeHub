@@ -39,6 +39,7 @@ main {
     margin-top: 62px;
     flex: 1; /* Pushes the footer to the bottom */
     padding: 20px;
+    padding-top: 50;
 }
 
 .signup-container, .signin-container {

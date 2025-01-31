@@ -89,6 +89,8 @@
     <main class="flex-shrink-0 main-bg" aria-label="Main content">
         {% if user.is_authenticated %}
         <span>You are logged in as {{ user }}</span>
+        {% else %}
+        <span>You are not logged in.</span>
         {% endif %}
         {% if messages %}
         <div id="django-message" class="position-absolute top-0 start-50 translate-middle-x p-3 rounded text-center">
