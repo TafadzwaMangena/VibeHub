@@ -8,6 +8,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+{% comment %} {% endcomment %}
 
 <head>
     <meta charset="UTF-8">
@@ -57,26 +58,26 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-label="Go to Feed page"
-                                href="{% url 'feed' %}">Feed</a>
+                            <a class="nav-link {% if request.path == home_url %}active{% endif %}"
+                                aria-label="Go to Feed page" href="{% url 'feed' %}">Feed</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == about_url %}active{%endif%}" aria-label="Go to About page"
-                                href="{% url 'about' %}">About</a>
+                            <a class="nav-link {% if request.path == about_url %}active{%endif%}"
+                                aria-label="Go to About page" href="{% url 'about' %}">About</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-label="Log out of your account"
-                                href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                                aria-label="Log out of your account" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-label="Register a new account"
-                                href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                                aria-label="Register a new account" href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-label="Log into your account"
-                                href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                                aria-label="Log into your account" href="{% url 'account_login' %}">Login</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -86,6 +87,9 @@
     </header>
 
     <main class="flex-shrink-0 main-bg" aria-label="Main content">
+        {% if user.is_authenticated %}
+        <span>You are logged in as {{ user }}</span>
+        {% endif %}
         {% if messages %}
         <div id="django-message" class="position-absolute top-0 start-50 translate-middle-x p-3 rounded text-center">
             {% for message in messages %}
@@ -95,7 +99,7 @@
             {% endfor %}
         </div>
         {% endif %}
-        
+
         {% block content %}
         {% endblock content %}
     </main>
@@ -128,4 +132,5 @@
     </script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>
