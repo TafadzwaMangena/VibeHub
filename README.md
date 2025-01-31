@@ -57,3 +57,48 @@ VibeHub caters to a broad audience, from social media users to content creators,
 | Issue #    | User Story |
 |-------------|-------------|
 |[Admin Moderation](https://github.com/TafadzwaMangena/VibeHub/issues/8)|As an admin, I want to moderate posts and user-reported content so that I can ensure the platform maintains community guidelines.  |
+
+---
+
+## Technologies used
+
+- ### Languages:
+    
+    + [Python 3.8.5](https://www.python.org/downloads/release/python-385/): the primary language used to develop the server-side of the website.
+    + [JS](https://www.javascript.com/): the primary language used to develop interactive components of the website.
+    + [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language used to create the website.
+    + [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the styling language used to style the website.
+
+- ### Frameworks and libraries:
+
+    + [Django](https://www.djangoproject.com/): python framework used to create all the logic.
+    + [jQuery](https://jquery.com/): was used to control click events and sending AJAX requests.
+    + [Bootstrap](https://getbootstrap.com/) was used for responsive UI and styling.
+
+- ### Databases:
+
+    + [Heroku](https://www.sqlite.org/): was used f hosting the deployed application.
+    + [SQLite](https://www.sqlite.org/): was used as a local database for development.
+    + [PostgreSQL](https://www.postgresql.org/): was used as a production database.
+
+- ### Other tools:
+
+    + [Git](https://git-scm.com/): the version control system used to manage the code.
+    + [Pip3](https://pypi.org/project/pip/): the package manager used to install the dependencies.
+    + [Gunicorn](https://gunicorn.org/): the webserver used to run the website.
+    + [Spycopg2](https://www.python.org/dev/peps/pep-0249/): the database driver used to connect to the database.
+    + [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
+    + [Django-crispy-forms](https://django-cryptography.readthedocs.io/en/latest/): was used to control the rendering behavior of Django forms.
+    + [GitHub](https://github.com/): used to host the website's source code.
+    + [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
+    + [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
+    + [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
+    + [Coolors](https://coolors.co/202a3c-1c2431-181f2a-0b1523-65e2d9-925cef-6b28e0-ffffff-eeeeee) was used to make a color palette for the website.
+    + [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
+    + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
+    + [JShint](https://jshint.com/): was used to validate JS code for the website.
+    + [CI Python Linter](https://pep8ci.herokuapp.com/): was used to validate Python code for the website.
+    + [GIMP](https://www.gimp.org/) was used to make and resize images for the README file.
+    + [gitpod](https://www.gitpod.io/)  and [VSCode](https://code.visualstudio.com/) were used as the main tools to write and edit code.
+
+
