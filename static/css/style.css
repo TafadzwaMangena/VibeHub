@@ -212,3 +212,13 @@ footer a:hover {
 footer .footer-left p {
   color: #ffffff;
 }
+
+
+/* Bootstrap's breakpoint for collapsing nav */
+@media (max-width: 991px) {
+  .navbar-toggler {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+  }
+}
