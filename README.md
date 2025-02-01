@@ -133,4 +133,16 @@ The color scheme of the application is based on simple black and white color sch
 - [Small Screen Wireframes](add-pdf)
 
 
+---
+
+## Flowchart
+
+The following flowchart was created to help to understand the application and its functionality.
+
+The flowchart represents the logic of the application:
+
+The flowchart was created using [Lucid Charts](https://lucid.app/documents#/home?folder_id=recent)
+
+ ![Add flow chart image](image)
+
 
