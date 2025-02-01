@@ -146,3 +146,63 @@ The flowchart was created using [Lucid Charts](https://lucid.app/documents#/home
  ![Add flow chart image](image)
 
 
+## Information Architecture
+
+### Database
+
+* The database was migrated to PostgreSQL.
+
+### Entity-Relationship Diagram
+
+* The ERD was created using [Draw.io](https://www.lucidchart.com/).
+
+- [Database Scheme](.pdf)
+
+
+---
+
+## Testing
+
+Please refer to the [TESTING.md](TESTING.md) file for all test-related documentation.
+
+
+
+---
+
+## Deployment
+
+
+- The app was deployed to [Heroku](https://dashboard.heroku.com/).
+- The app can be reached by the [link](https://vibehub-d3289bc84e8e.herokuapp.com/).
+
+Please refer to the [DEPLOYMENT.md](DEPLOYMENT.md) file for all deployment-related documentation.
+
+---
+
+## Credits
+
+- [GitHub](https://github.com/) for giving the idea of the project's design.
+- [Django](https://www.djangoproject.com/) for the framework.
+- [Font awesome](https://fontawesome.com/): for the free access to icons.
+- [Heroku](https://www.heroku.com/): for the free hosting of the website.
+- [Coolors](https://coolors.co/): for providing a free platform to generate your own palette.
+- [Postgresql](https://www.postgresql.org/): for providing a free database.
+- [Codemy.com](https://www.youtube.com/watch?v=N-PB-HMFmdo): for providing a free video on how to implement pagination in the project.
+- [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb/related?hl=en): for providing a free platform to test website responsiveness
+- [GoFullPage](chrome://extensions/?id=fdpohaocaechififmbbbbbknoalclacl): for allowing to create free full web page screenshots;
+- [Favicon Generator](https://favicon.io/): for providing a free platform to generate favicons.
+- [Tutorial Republic](https://www.tutorialrepublic.com/) for assisting with the code for javascript function to add tooltips.
+- [Stack Overflow](https://www.tutorialrepublic.com/) assistance on designing my report model and other questions.
+- [Code Institute Django Blog](https://codeinstitute.net/global/) for inspiring the idea to create VibeHub.
+
+*All users are fictional, The content currently on the website was auto generated using ChatGPT to give real life application of the website.*
+
+
+---
+
+## Acknowledgments
+
+
+- My wife Kim was supportive though out the building of the website and gave me ideas.
+- [IuIiia  Konovalova](https://github.com/IuliiaKonovalova), my mentor, who assisted me and guided me through the whole development with insightful knowledge.
+- Rebecca, a tutor at Code Institute. 
