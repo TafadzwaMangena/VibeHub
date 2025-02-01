@@ -1,137 +1,155 @@
 /*--------------------------generic styles--------------------------------*/
 
 body {
-    display: flex;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f8f9fa;
-  }
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f8f9fa;
+}
 
 
 /*------------------------header-----------------------------------*/
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .navbar {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .navbar-brand {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 header {
-    background-color: #000000;
-    color: #ffffff;
-    display: flex;
-    position: fixed;
-    z-index: 99;
-    width: 100%;
-    align-items: start;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  align-items: start;
 }
 
 /*--------------------------main--------------------------------*/
 
 main {
-    /* Add margin top so no content will be covered in header */
-    margin-top: 62px;
-    flex: 1;
-    padding: 20px;
-    padding-top: 50;
+  /* Add margin top so no content will be covered in header */
+  margin-top: 62px;
+  flex: 1;
+  padding: 20px;
+  padding-top: 50;
 }
 
-.signup-container, .signin-container {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-  }
-  .btn-signup, .btn-signin {
-    background-color: #007bff;
-    color: white;
-  }
-  .btn-signup:hover, .btn-signin:hover {
-    background-color: #0056b3;
-  }
-  .form-control, .form-select {
-    border-radius: 5px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  .form-control:focus, .form-select:focus {
-    border-color: #dc3545;
-    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
-  }
+.signup-container,
+.signin-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
 
-  .create-post-container {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-  }
+.btn-signup,
+.btn-signin {
+  background-color: #007bff;
+  color: white;
+}
 
-  .btn-submit {
-    background-color: #28a745;
-    color: white;
-  }
-  .btn-submit:hover {
-    background-color: #218838;
-  }
-  .btn-back {
-    background-color: #6c757d;
-    color: white;
-  }
-  .btn-back:hover {
-    background-color: #5a6268;
-  }
+.btn-signup:hover,
+.btn-signin:hover {
+  background-color: #0056b3;
+}
 
-  .update-post-container {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-  }
-  .btn-update {
-    background-color: #007bff;
-    color: white;
-  }
-  .btn-update:hover {
-    background-color: #0056b3;
-  }
-  .btn-cancel {
-    background-color: #6c757d;
-    color: white;
-  }
-  .btn-cancel:hover {
-    background-color: #5a6268;
-  }
+.form-control,
+.form-select {
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 
-  .report-post-container {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-  }
-  .btn-report {
-    background-color: #dc3545;
-    color: white;
-  }
-  .btn-report:hover {
-    background-color: #b02a37;
-  }
+.form-control:focus,
+.form-select:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+}
 
-  select:invalid{
-        color: gray;
-    }
+.create-post-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.btn-submit {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-submit:hover {
+  background-color: #218838;
+}
+
+.btn-back {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-back:hover {
+  background-color: #5a6268;
+}
+
+.update-post-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.btn-update {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-update:hover {
+  background-color: #0056b3;
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #5a6268;
+}
+
+.report-post-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.btn-report {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-report:hover {
+  background-color: #b02a37;
+}
+
+select:invalid {
+  color: gray;
+}
 
 /* ------------------------django messages---------------------*/
 
@@ -151,46 +169,46 @@ main {
 
 /*-------------------------footer-------------------------------*/
 footer {
-    background-color: #000000;
-    padding: 1rem;
-    font-size: 0.9rem;
-    width: 100%;
+  background-color: #000000;
+  padding: 1rem;
+  font-size: 0.9rem;
+  width: 100%;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .footer-left,
 .footer-right {
-    width: 45%;
-    color: #ffffff;
+  width: 45%;
+  color: #ffffff;
 }
 
 footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 footer ul li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 footer a {
-    text-decoration: none;
-    color: #ffffff;
+  text-decoration: none;
+  color: #ffffff;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 footer .footer-left p {
-    color: #ffffff;
+  color: #ffffff;
 }
