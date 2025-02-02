@@ -71,11 +71,11 @@ Create a local copy of the GitHub repository by following one of the two process
 * Log in or create a Heroku account.
 * Create a new app with any unique name <name app>.
 
-  ![Heroku. Create New App]()
+  ![Heroku. Create New App](documentation/deployment/new_heroku_app.png)
 
 * Create a Procfile in your local workplace:
 
-  ![Heroku. Procfile]()
+  ![Heroku. Procfile](documentation/deployment/heroku_procfile.png)
     
     This file will will contain the following:
     ```python
@@ -85,11 +85,11 @@ Create a local copy of the GitHub repository by following one of the two process
 
 * Go to resources in Heroku and search for postgresql. Select Hobby dev - Free and click on the provision button to add it to the project.
 
-  ![Heroku. Postgres]()
+  ![Heroku. Postgres](documentation/deployment/heroku_postgres.png)
 
 * Go to the settings app in Heroku and go to Config Vars.
 
-  ![Heroku. Settings]()
+  ![Heroku. Settings](documentation/deployment/settings_tab.png)
 
 Click on Reveal Config Vars and add the following config variables:
 
@@ -106,20 +106,22 @@ Click on Reveal Config Vars and add the following config variables:
 * Commit and push the changes to GitHub.
 * Connect your repository to Heroku.
 
-  ![Heroku. Connect to GitHub]()
+  ![Heroku. Connect to GitHub](documentation/deployment/heroku-github.webp)
 
 * Deploy the app to Heroku by clicking "Deploy Branch" button. If you want to enable auto-deployment, click "Enable Automatic Deployment".
 
 The deployment process will start.
 
-  ![Heroku. Deploy to Heroku]() 
+  ![Heroku. Deploy to Heroku](documentation/deployment/heroku_deploy_branch.png)
+
+The deployment process will start.
+
+  ![Heroku. Deployment](documentation/deployment/heroku_deploying.png)
 
 Click "View build logs" to see the progress of the deployment.
 
-  ![Heroku. Deploy to Heroku]()
-
-
-
+  ![]()
+  ![Heroku. Deploying View](documentation/deployment/heroku_deploying_view.png)
 
 **Final Deployment**
 
