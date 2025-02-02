@@ -6,7 +6,7 @@ Repository: [GitHub Repo](https://github.com/TafadzwaMangena/VibeHub)
 
 The app is developed by [Tafadzwa Mangena](https://github.com/TafadzwaMangena).
 
-![VibeHub](feed-photo)
+![VibeHub](documentation/readme/feed.png)
 
 ## About
 
@@ -97,7 +97,6 @@ VibeHub caters to a broad audience, from social media users to content creators,
     + [gitpod](https://www.gitpod.io/)  and [VSCode](https://code.visualstudio.com/) were used as the main tools to write and edit code.
     + [Balsamiq wireframes](https://balsamiq.com/) was used to generate the wireframes.
 
-
 ---
 
 ## FEATURES
@@ -114,7 +113,7 @@ VibeHub follows a clean, modern, and user-friendly design, balancing aesthetics 
 
 The color scheme of the application is based on simple black and white color schemes with buttons using default bootstrap color schemes:
 
-  ![Color Scheme](coolersphoto)
+  ![Coloors Scheme](documentation/readme/coolers-scheme.png)
 
 ### Imagery
 
@@ -124,8 +123,8 @@ The color scheme of the application is based on simple black and white color sch
 
 ### Wireframes
 
-- [Large Screen Wireframes](add-pdf)
-- [Small Screen Wireframes](add-pdf)
+- [Large Screen Wireframes](documentation/readme/wireframes-desktops.pdf)
+- ![Small Screen Wireframes](documentation/readme/wireframes-mobile.png)
 
 ---
 
@@ -137,7 +136,7 @@ The flowchart represents the logic of the application:
 
 The flowchart was created using [Lucid Charts](https://lucid.app/documents#/home?folder_id=recent)
 
- ![Add flow chart image](image)
+ ![Flow chart image](documentation/readme/flowchart.png)
 
 ## Information Architecture
 
