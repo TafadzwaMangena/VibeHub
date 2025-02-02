@@ -158,7 +158,6 @@ select:invalid {
   border: 1px solid #ced4da;
 }
 
-/* Transition for fading effect */
 #django-message {
   display: none;
   z-index: 1050;
