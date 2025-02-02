@@ -1,4 +1,4 @@
-# Cool School
+# VibeHub
 
 ## Features
 
@@ -47,27 +47,21 @@ Y = Yes; N = No
 
 **Navbar**
 
-![Navbar]()
+![Navbar](documentation/features/nav-bar-logged-out.png)
 
 Navbar has the following links:
 - Feed page
 - About page
 - Register / Login / Logout
-- ![Register]()
-- ![Login]()
 - It also has the VibeHub brand logo.
-- ![Logo]()
 
 The simplistic design of the navbar is based on the decision to make the use of the webapp easy for the user. 
 
 When the user is logged in, the navbar looks as follows.
 
-- ![Navbar User logged in]()
-
+![Navbar User logged in](documentation/features/nav-bar-logged-in.png)
 
 **Footer**
-
-![Footer]()
 
 Footer has the following sections:
 
@@ -76,28 +70,28 @@ Footer has the following sections:
 - Links to the feed and about page:
 - Social media links to x and instagram which open on a different page:
 
-  ![Footer]()
+  ![Footer](documentation/features/footer.png)
 
 **Feed page**
 
 - The Feed page displays the user log status, links to feed, about, register and login pages, main topics, latest posts, pagination buttons and the footer.
 - The user log status is always displayed below the navigation bar.
 
-- ![Feed page]()
+- ![Feed page](documentation/features/feed-page.png)
 
 **About page**
 
 - This page contains information about VibeHub, the mission, what is offered and the values of the web application.
 - The user log status is always displayed below the navigation bar.
 
-- ![About page]()
+- ![About page](documentation/features/about-page.png)
 
 **Registration Page**
 
 - This link redirects the user to the sign up page and requests username, email (optional) and password to register a user and redirects them back to the feed now as a logged in user.
 - The user log status is always displayed below the navigation bar.
 
-- ![Registration Page]()
+- ![Registration Page](documentation/features/register-page.png)
 
 **Login page**
 
@@ -105,8 +99,7 @@ Footer has the following sections:
 - Once the user signs in they are redirected to the feed page.
 - The user log status is always displayed below the navigation bar.
 
- - ![Login page]()
-
+![Login page](documentation/features/login-page.png)
 
 **Logout page**
 
@@ -114,8 +107,49 @@ Footer has the following sections:
 - If user clicks the sign out button they are signed out and redirected to the feed page as an unauthenticated user.
 - The user log status is always displayed below the navigation bar.
 
-- ![Logout page]()
+- ![Logout page](documentation/features/logout-page.png)
 
+**Topic Posts page**
+
+- This page displays all posts related to selected topic.
+- If user clicks the "back to feed" button they are redirected to the feed.
+- The user log status is always displayed below the navigation bar.
+
+- ![Topic Post page](documentation/features/topic-posts.png)
+
+**Topic Posts Detail page**
+
+- This page displays all information of selected post.
+- If user clicks the "back to feed" button they are redirected to the feed.
+- The user log status is always displayed below the navigation bar.
+
+- ![Topic Posts Detail page](documentation/features/topic-post-detail.png)
+
+**Edit Post page**
+
+- This page displays a form to allow user to edit title, topic and content.
+- The form has a "cancel" button that redirects the user back to the feed.
+- If user clicks the "update post" the post is updated and they are redirected to the feed.
+- The user log status is always displayed below the navigation bar.
+
+- ![Edit Post page](documentation/features/edit-post.png)
+
+**Delete Post page**
+
+- This "delete" button pops up a modal to confirm the deletion of the post.
+- The form has a "cancel" button that redirects the user back to the feed.
+- If user clicks the "delete" the post is deleted and they are redirected to the feed.
+
+
+- ![Delete Post page](documentation/features/delete-post.png)
+
+**Report Post page**
+
+- The page has a form to report post, the form is valid when a reason is selected.
+- The form has a "cancel" button that redirects the user back to the feed.
+- If user clicks the "report" the post is reported and they are redirected to the feed.
+
+- ![Report Post page](documentation/features/report-post.png)
 
 **Error Page**
 
@@ -123,12 +157,12 @@ Footer has the following sections:
 - Below the message there is a "Back to Feed" button which redirects user back to the feed page.
 - The user log status is always displayed below the navigation bar.
 
- - ![Error Page. 404]()
+ - ![Error Page. 404](documentation/features/error-page.png)
 
 **Favicon**
 
   - The favicon is a small image that is displayed in the browser's address bar. It is used to identify the website among others and help the user to find it when they are searching for it.
   
-- ![Favicon]()
+- ![Favicon](documentation/features/favicon.png)
 
 ---
