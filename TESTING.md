@@ -48,23 +48,22 @@ Usability was tested with the below user acceptance testing, sent to new users t
 
 ## Testing User Story
 
-| First Time Visitor Goals | User Story Requirement met | Image |
+| First Time Visitor Goals | User Story Requirement met | Condition met Y/N |
 | ------------------------- | --------------- | ----- |
-| Account Registration | As a new user, I want to register an account so that I can participate in discussions.|  |
-| Account Login | As a returning user, I want to log into my account so that I can access my personalized feed. |  |
+| Account Registration | As a new user, I want to register an account so that I can participate in discussions.| Y |
+| Account Login | As a returning user, I want to log into my account so that I can access my personalized feed. | Y |
 
-
-| Frequent Visitor Goals    | User Story Requirement met | Image |
+| Frequent Visitor Goals    | User Story Requirement met | Condition met Y/N |
 | ------------------------- | --------------- | ----- |
-| Create Post | As a registered user, I want to create posts so that I can share my thoughts with the community. |  |
-| Browse Posts | As a user, I want to browse posts so that I can stay updated with trending discussions. |  |
-| Choose Topic | As a user, I want to filter posts by topics so that I can find content relevant to my interests. |  |
-| Edit/Delete Own Posts | As a user, I want to edit or delete my posts so that I can correct mistakes or remove content I no longer want to share. |  |
-| Report Inappropriate Content | As a user, I want to report inappropriate content so that the platform remains a safe space. |  |
+| Create Post | As a registered user, I want to create posts so that I can share my thoughts with the community. | Y |
+| Browse Posts | As a user, I want to browse posts so that I can stay updated with trending discussions. | Y |
+| Choose Topic | As a user, I want to filter posts by topics so that I can find content relevant to my interests. | Y |
+| Edit/Delete Own Posts | As a user, I want to edit or delete my posts so that I can correct mistakes or remove content I no longer want to share. | Y |
+| Report Inappropriate Content | As a user, I want to report inappropriate content so that the platform remains a safe space. | Y |
 
-| Admin Goals    | User Story Requirement met | Image |
+| Admin Goals    | User Story Requirement met | Condition met Y/N |
 | ------------------------- | --------------- | ----- |
-| Admin Moderation| As an admin, I want to moderate posts and user-reported content so that I can ensure the platform maintains community guidelines. |  |
+| Admin Moderation| As an admin, I want to moderate posts and user-reported content so that I can ensure the platform maintains community guidelines. | Y |
 
 ---
 
@@ -75,7 +74,7 @@ Usability was tested with the below user acceptance testing, sent to new users t
 
 When the navigation bar is collapsed, The button should be aligned to the right of the navigation bar. However it is stuck on left side due to bootstrap styles.
 
-![nav]()
+![Collapsed Nav bar](documentation/testing/collapsed-nav-bar.png)
 
 ### Solved bugs
 
@@ -88,25 +87,25 @@ But I made an effort to address most of them. All Auth forms were not properly d
 ## Validation:
 ### HTML Validation:
 
-- [Full HTML Validation Report]()
+- [Full HTML Validation Report](documentation/testing/html_validation.pdf)
 
 - No errors or warnings were found when passing through the official [W3C](https://validator.w3.org/) validator. This checking was done manually by copying the view page source code (Ctrl+U) and pasting it into the validator.
 
 ### CSS Validation:
 
-- [Full CSS Validation Report]()
+- [Full CSS Validation Report](documentation/testing/css-validation.pdf)
 
 - No errors or warnings were found when passing through the official [W3C (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri) validator except for the warnings about the use of css root variables and webkits for the box-shadow. However, css code works perfectly on various devices.
 
 ### JS Validation:
 
-- [Full JS Validation Report]()
+- [Full JS Validation Report](documentation/testing/jshint.pdf)
 
 - No errors or warning messages were found when passing through the official [JSHint](https://www.jshint.com/) validator.
   
 ### Python Validation:
 
-- [Full Python Validation Report]()
+- [Full Python Validation Report](documentation/testing/python_validation.pdf)
 
 - No errors were found when the code was passed through the [CI Python Linter](https://pep8ci.herokuapp.com/). This checking was done manually by copying python code and pasting it into the validator.
 
@@ -115,43 +114,40 @@ But I made an effort to address most of them. All Auth forms were not properly d
 
 ### Feed Page
 
-![Lighthouse Report. Feed Page]()
+![Lighthouse Report. Feed Page](documentation/testing/lr-feed-page.png)
 
 ### About Page
 
-![Lighthouse Report. Login Page]()
+![]()
+![Lighthouse Report. About Page](documentation/testing/lr-about-page.png)
 
 ### Register Page
 
-![Lighthouse Report. Register Page]()
+![Lighthouse Report. Register Page](documentation/testing/lr-signup-page.png)
 
 ### Login Page
 
-![Lighthouse Report. Login Page]()
+![Lighthouse Report. Login Page](documentation/testing/lr-login-page.png)
 
 ### Logout Page
 
-![Lighthouse Report. Logout Page]()
+![Lighthouse Report. Logout Page](documentation/testing/lr-logout-page.png)
 
 ### Topic details Page
 
-![Lighthouse Report. Topic details Page]()
+![Lighthouse Report. Topic details Page](documentation/testing/lr-topic-details-page.png)
 
 ### Create Post Page
 
-![Lighthouse Report. Create Post Page]()
+![Lighthouse Report. Create Post Page](documentation/testing/lr-create-post-page.png)
 
 ### Edit Post Page
 
-![Lighthouse Report. Edit Post Page]()
-
-### Delete Page
-
-![Lighthouse Report. Delete Page]()
+![Lighthouse Report. Edit Post Page](documentation/testing/lr-update-post-page.png)
 
 ### Report Page
 
-![Lighthouse Report. Report Page]()
+![Lighthouse Report. Report Page](documentation/testing/lr-report-post-page.png)
 
 ---
 
@@ -163,7 +159,7 @@ Testing was conducted on the following browsers;
 - Firefox;
 - Opera;
 
-[Compatibility Report](pdf)
+This is proven on the uploaded files and photos.
 
 
 ---
@@ -172,6 +168,9 @@ Testing was conducted on the following browsers;
 
 The responsiveness was checked manually by using devtools (Chrome) throughout the whole development. It was also checked with [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb/related?hl=en) Chrome extension.
 
-[Responsiveness Report](pdf)
+- [Responsiveness Report Feed page](documentation/testing/responsiveness-feed-page.pdf)
+- [Responsiveness Report About page](documentation/testing/responsiveness-about-page.pdf)
+- [Responsiveness Report Create Post page](documentation/testing/responsiveness-create-post-page.pdf)
+- [Responsiveness Report Topic Post page](documentation/testing/responsiveness-topic-post-detail-page.pdf)
 
 ---
