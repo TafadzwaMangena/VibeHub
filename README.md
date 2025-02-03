@@ -67,7 +67,6 @@ VibeHub caters to a broad audience, from social media users to content creators,
 - ### Frameworks and libraries:
 
     + [Django](https://www.djangoproject.com/): python framework used to create all the logic.
-    + [jQuery](https://jquery.com/): was used to control click events and sending AJAX requests.
     + [Bootstrap](https://getbootstrap.com/) was used for responsive UI and styling.
 
 - ### Databases:
